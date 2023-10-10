@@ -33,7 +33,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TFLClassify"
         tools:ignore="AllowBackup">
-        <activity android:name="org.tensorflow.lite.examples.ricedisease.scanner"
+        <activity android:name=".Click_Main" />
+        <activity android:name=".Onboarding" />
+        <activity android:name=".Scanner" />
+        <activity android:name=".Login" />
+        <activity android:name="org.tensorflow.lite.examples.ricedisease.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

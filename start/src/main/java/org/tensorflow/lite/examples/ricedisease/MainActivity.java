@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                 }
                 else{
-                    Intent gotohome = new Intent(MainActivity.this, Click_Main.class);
+                    Intent gotohome = new Intent(MainActivity.this, Login.class);
                     startActivity(gotohome);
                     finish();
                 }

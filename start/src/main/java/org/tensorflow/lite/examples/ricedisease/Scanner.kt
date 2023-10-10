@@ -78,7 +78,7 @@ typealias RecognitionListener = (recognition: List<Recognition>) -> Unit
 /**
  * Main entry point into TensorFlow Lite Classifier
  */
-class scanner : AppCompatActivity() {
+class Scanner : AppCompatActivity() {
 
     // CameraX variables
     private lateinit var preview: Preview // Preview use case, fast, responsive view of the camera

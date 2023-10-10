@@ -18,4 +18,18 @@
     <string name="app_name">Rice Disease</string>
     <string name="permission_deny_text">Required permissions denied. Exiting.</string>
     <string name="logo">App Logo</string>
+
+    //title
+    <string name="Section1">Seeds</string>
+    <string name="Section2">Cleaning</string>
+    <string name="Section3">Fertilizers</string>
+    <string name="Section4">Proper Use of Pesticide</string>
+    <string name="Section5">Storage Facility</string>
+
+        //description
+    <string name="des1">Use only certified seeds. Certified seed is high in genetic purity, high in germination and vigor, and of good quality</string>
+    <string name="des2">Proper cleaning of field and equipment used in rice paddies is necessary between seasons</string>
+    <string name="des3">Avoiding excessive application of fertilizers</string>
+    <string name="des4">In many cases, pesticide application is not allowed within 40 days of seeding (ask your local licensed agronomist)</string>
+    <string name="des5">Proper storing of grains. In many cases, grains are stored in containers with 13-14% moisture</string>
 </resources>
