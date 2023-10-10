@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1023773100500",
+    "project_id": "detector-c419c",
+    "storage_bucket": "detector-c419c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023773100500:android:75ca9041de997fbe0cee41",
+        "android_client_info": {
+          "package_name": "org.tensorflow.lite.examples.ricedisease"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNsO8f4jTwL71hU1uBZz_LIJmZkcALHQs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

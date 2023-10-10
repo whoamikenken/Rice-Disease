@@ -27,9 +27,11 @@ import android.util.Log
 import android.util.Size
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.annotation.OptIn
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.Camera
 import androidx.camera.core.CameraSelector
+import androidx.camera.core.ExperimentalGetImage
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageProxy
 import androidx.camera.core.Preview
@@ -98,7 +100,7 @@ class scanner : AppCompatActivity() {
     private val recogViewModel: RecognitionListViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.scanner_main)
 
         // Request camera permissions
         if (allPermissionsGranted()) {
@@ -145,6 +147,7 @@ class scanner : AppCompatActivity() {
         permissions: Array<String>,
         grantResults: IntArray
     ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == REQUEST_CODE_PERMISSIONS) {
             if (allPermissionsGranted()) {
                 startCamera()
@@ -378,7 +381,7 @@ class scanner : AppCompatActivity() {
         private lateinit var bitmapBuffer: Bitmap
         private lateinit var rotationMatrix: Matrix
 
-        @SuppressLint("UnsafeExperimentalUsageError")
+        @OptIn(ExperimentalGetImage::class) @SuppressLint("UnsafeExperimentalUsageError")
         private fun toBitmap(imageProxy: ImageProxy): Bitmap? {
 
             val image = imageProxy.image ?: return null
