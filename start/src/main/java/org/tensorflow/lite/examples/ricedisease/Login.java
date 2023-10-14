@@ -152,14 +152,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                                 if (task.isSuccessful()) {
                                     // Document found in the offline cache
                                     DocumentSnapshot document = task.getResult();
-                                    if (document.getData().get("status").toString().equals("Verified")){
-                                        Toast.makeText(Login.this, "Login Success", Toast.LENGTH_LONG).show();
-                                        startActivity(new Intent(Login.this, Click_Main.class));
-                                        progressBar.setVisibility(View.GONE);
-                                    }else{
-                                        Toast.makeText(Login.this, "Your account is not yet verified. Please Wait", Toast.LENGTH_LONG).show();
-                                        progressBar.setVisibility(View.GONE);
-                                    }
+                                    Toast.makeText(Login.this, "Login Success", Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(Login.this, Click_Main.class));
+                                    progressBar.setVisibility(View.GONE);
                                 } else {
                                     Log.d("TFL Classify", "Cached get failed: ", task.getException());
                                 }

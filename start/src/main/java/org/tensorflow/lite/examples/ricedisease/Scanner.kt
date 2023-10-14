@@ -41,7 +41,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
+import org.tensorflow.lite.examples.ricedisease.ml.AutoMLMid
 import org.tensorflow.lite.examples.ricedisease.ml.RiceE10
+import org.tensorflow.lite.examples.ricedisease.ml.RiceE5
+import org.tensorflow.lite.examples.ricedisease.ml.RiceTest
 import org.tensorflow.lite.examples.ricedisease.ui.RecognitionAdapter
 import org.tensorflow.lite.examples.ricedisease.util.YuvToRgbConverter
 import org.tensorflow.lite.examples.ricedisease.viewmodel.Recognition
@@ -52,7 +55,7 @@ import org.tensorflow.lite.support.model.Model
 import java.util.concurrent.Executors
 
 // Constants
-private const val MAX_RESULT_DISPLAY = 3 // Maximum number of results displayed
+private const val MAX_RESULT_DISPLAY = 1 // Maximum number of results displayed
 private const val TAG = "TFL Classify" // Name for logging
 private const val REQUEST_CODE_PERMISSIONS = 999 // Return code after asking for permission
 private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA) // permission needed
@@ -85,8 +88,6 @@ class Scanner : AppCompatActivity() {
     private lateinit var imageAnalyzer: ImageAnalysis // Analysis use case, for running ML code
     private lateinit var camera: Camera
     private val cameraExecutor = Executors.newSingleThreadExecutor()
-
-
 
     // Views attachment
     private val resultRecyclerView by lazy {
@@ -233,7 +234,7 @@ class Scanner : AppCompatActivity() {
         // method is called.
 //        private val riceModel = RiceMNE10.newInstance(ctx)
         // TODO 6. Optional GPU acceleration
-        private val riceModel: RiceE10 by lazy{
+        private val riceModel: AutoMLMid by lazy{
             val compatList = CompatibilityList()
             val options = if(compatList.isDelegateSupportedOnThisDevice){
                 Log.d(TAG, "This device is GPU Compatible ")
@@ -243,7 +244,7 @@ class Scanner : AppCompatActivity() {
                 Model.Options.Builder().setNumThreads(4).build()
             }
             // Initialize the Flower Model
-            RiceE10.newInstance(ctx, options)
+            AutoMLMid.newInstance(ctx, options)
           }
 
 
@@ -255,15 +256,20 @@ class Scanner : AppCompatActivity() {
             val tfImage = TensorImage.fromBitmap(toBitmap(imageProxy))
 
             // TODO 3: Process the image using the trained model, sort and pick out the top results
-            val outputs = riceModel.process(tfImage)
-              .probabilityAsCategoryList.apply {
-                  sortByDescending { it.score } // Sort with highest confidence first
-              }.take(MAX_RESULT_DISPLAY) // take the top results
+//            val outputs = riceModel.process(tfImage)
+//              .probabilityAsCategoryList.apply {
+//                  sortByDescending { it.score } // Sort with highest confidence first
+//              }.take(MAX_RESULT_DISPLAY) // take the top results
+
+             val outputs = riceModel.process(tfImage).scoresAsCategoryList.apply { sortByDescending { it.score } }.take(
+                 MAX_RESULT_DISPLAY)
 
             // TODO 4: Converting the top probability items into a list of recognitions
             for (output in outputs) {
-                items.add(Recognition(output.label, output.score))
-                if(output.score >= 0.5){
+                Log.d(TAG, output.label+" "+output.score)
+                if(output.score >= 0.55){
+                    items.add(Recognition(output.label, output.score))
+                    // Return the result
                     if(output.label == "bacterial_leaf_blight"){
                         bacterial_leaf_blight++
                         if(bacterial_leaf_blight > 10){
@@ -361,15 +367,12 @@ class Scanner : AppCompatActivity() {
                             Log.d(TAG, output.label+" "+output.score)
                         }
                     }
+                }else{
+                    items.add(Recognition("Cannot Classify", output.score))
                 }
+
+                listener(items.toList())
             }
-
-
-            // END - Placeholder code at the start of the codelab. Comment this block of code out.
-
-            // Return the result
-            listener(items.toList())
-
             // Close the image,this tells CameraX to feed the next image to the analyzer
             imageProxy.close()
         }
