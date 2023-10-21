@@ -22,10 +22,20 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center">
             <Button
-                android:id="@+id/detect_c"
+                android:id="@+id/scan_c"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Scan"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_marginRight="20dp"
+                android:backgroundTint="@color/green"/>
+
+            <Button
+                android:id="@+id/detect_c"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Detect"
                 android:textSize="25dp"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/green"/>

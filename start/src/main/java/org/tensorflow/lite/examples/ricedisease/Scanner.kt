@@ -41,10 +41,8 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
+import org.tensorflow.lite.examples.ricedisease.ml.RiceACC
 import org.tensorflow.lite.examples.ricedisease.ml.AutoMLMid
-import org.tensorflow.lite.examples.ricedisease.ml.RiceE10
-import org.tensorflow.lite.examples.ricedisease.ml.RiceE5
-import org.tensorflow.lite.examples.ricedisease.ml.RiceTest
 import org.tensorflow.lite.examples.ricedisease.ui.RecognitionAdapter
 import org.tensorflow.lite.examples.ricedisease.util.YuvToRgbConverter
 import org.tensorflow.lite.examples.ricedisease.viewmodel.Recognition
@@ -234,7 +232,8 @@ class Scanner : AppCompatActivity() {
         // method is called.
 //        private val riceModel = RiceMNE10.newInstance(ctx)
         // TODO 6. Optional GPU acceleration
-        private val riceModel: AutoMLMid by lazy{
+
+        private val riceModel: RiceACC by lazy{
             val compatList = CompatibilityList()
             val options = if(compatList.isDelegateSupportedOnThisDevice){
                 Log.d(TAG, "This device is GPU Compatible ")
@@ -244,7 +243,7 @@ class Scanner : AppCompatActivity() {
                 Model.Options.Builder().setNumThreads(4).build()
             }
             // Initialize the Flower Model
-            AutoMLMid.newInstance(ctx, options)
+            RiceACC.newInstance(ctx, options)
           }
 
 
@@ -267,106 +266,66 @@ class Scanner : AppCompatActivity() {
             // TODO 4: Converting the top probability items into a list of recognitions
             for (output in outputs) {
                 Log.d(TAG, output.label+" "+output.score)
-                if(output.score >= 0.55){
-                    items.add(Recognition(output.label, output.score))
+                if(output.score >= 0.8){
+
                     // Return the result
-                    if(output.label == "bacterial_leaf_blight"){
+                    if(output.label == "Leaf_Blight"){
+                        items.add(Recognition("Leaf Blight", output.score))
                         bacterial_leaf_blight++
                         if(bacterial_leaf_blight > 10){
                             Log.d(TAG, output.label+" "+output.score)
                         }
                     }
 
-                    if(output.label == "bacterial_leaf_streak"){
+                    if(output.label == "Leaf_Streak"){
+                        items.add(Recognition("Leaf Streak", output.score))
                         bacterial_leaf_streak++
                         if(bacterial_leaf_streak > 10){
                             Log.d(TAG, output.label+" "+output.score)
                         }
                     }
 
-                    if(output.label == "bakanae"){
-                        bakanae++
-                        if(bakanae > 10){
-                            Log.d(TAG, output.label+" "+output.score)
-                        }
-                    }
-
-                    if(output.label == "brown_spot"){
+                    if(output.label == "Brown_Spot"){
+                        items.add(Recognition("Brown Spot", output.score))
                         brown_spot++
                         if(brown_spot > 10){
                             Log.d(TAG, output.label+" "+output.score)
                         }
                     }
 
-                    if(output.label == "grassy_stunt_virus"){
-                        grassy_stunt_virus++
-                        if(grassy_stunt_virus > 10){
-                            Log.d(TAG, output.label+" "+output.score)
-                        }
-                    }
-
-                    if(output.label == "healthy_rice_plant"){
+                    if(output.label == "Heathy_Rice"){
+                        items.add(Recognition("Heathy Rice", output.score))
                         healthy_rice_plant++
                         if(healthy_rice_plant > 10){
                             Log.d(TAG, output.label+" "+output.score)
                         }
                     }
 
-                    if(output.label == "narrow_brown_spot"){
-                        narrow_brown_spot++
-                        if(narrow_brown_spot > 10){
-                            Log.d(TAG, output.label+" "+output.score)
-                        }
-                    }
-
-                    if(output.label == "ragged_stunt_virus"){
-                        ragged_stunt_virus++
-                        if(ragged_stunt_virus > 10){
-                            Log.d(TAG, output.label+" "+output.score)
-                        }
-                    }
-
-                    if(output.label == "rice_blast"){
+                    if(output.label == "Rice_Blast"){
+                        items.add(Recognition("Rice Blast", output.score))
                         rice_blast++
                         if(rice_blast > 10){
                             Log.d(TAG, output.label+" "+output.score)
                         }
                     }
 
-                    if(output.label == "rice_false_smut"){
+                    if(output.label == "False_Smut"){
+                        items.add(Recognition("False Smut", output.score))
                         rice_false_smut++
                         if(rice_false_smut > 10){
                             Log.d(TAG, output.label+" "+output.score)
                         }
                     }
 
-                    if(output.label == "sheath_blight"){
-                        sheath_blight++
-                        if(sheath_blight > 10){
-                            Log.d(TAG, output.label+" "+output.score)
-                        }
-                    }
-
-                    if(output.label == "sheath_rot"){
-                        sheath_rot++
-                        if(sheath_rot > 10){
-                            Log.d(TAG, output.label+" "+output.score)
-                        }
-                    }
-
-                    if(output.label == "stem_rot"){
-                        stem_rot++
-                        if(stem_rot > 10){
-                            Log.d(TAG, output.label+" "+output.score)
-                        }
-                    }
-
-                    if(output.label == "tungro_virus"){
+                    if(output.label == "Tungro"){
+                        items.add(Recognition("Tungro Virus", output.score))
                         tungro_virus++
                         if(tungro_virus > 10){
                             Log.d(TAG, output.label+" "+output.score)
                         }
                     }
+
+
                 }else{
                     items.add(Recognition("Cannot Classify", output.score))
                 }

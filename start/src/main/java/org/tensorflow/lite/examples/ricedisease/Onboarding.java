@@ -40,7 +40,7 @@ public class Onboarding extends AppCompatActivity {
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent home = new Intent(Onboarding.this, Click_Main.class);
+                Intent home = new Intent(Onboarding.this, Login.class);
                 startActivity(home);
                 finish();
             }
@@ -86,7 +86,7 @@ public class Onboarding extends AppCompatActivity {
         }
 
         if (dots.length > 0){
-            dots[position].setTextColor(getResources().getColor(R.color.yellow));
+            dots[position].setTextColor(getResources().getColor(R.color.green));
         }
     }
 
