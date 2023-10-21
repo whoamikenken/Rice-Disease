@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/blacked"
     tools:context=".Click_Main">
 
@@ -65,15 +66,173 @@
             android:gravity="center"
             android:paddingLeft="5dp"/>
 
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/reclycler"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </androidx.recyclerview.widget.RecyclerView>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center">
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:id="@+id/BrownSpot"
+                    android:layout_gravity="center_vertical|center_horizontal">
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/brownspot"/>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:text="Brown Spot"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:id="@+id/Tungo"
+                    android:layout_gravity="center_vertical|center_horizontal">
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/tungro"/>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:text="Tungro"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:id="@+id/startWork"
+                    android:layout_gravity="center_vertical|center_horizontal">
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/falsesmut"/>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:text="False Smut"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center">
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:id="@+id/LeafBlight"
+                    android:layout_gravity="center_vertical|center_horizontal">
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/leafblight"/>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:text="Leaf Blight"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:id="@+id/LeafStreak"
+                    android:layout_gravity="center_vertical|center_horizontal">
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/leafstreak"/>
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:text="Leaf Streak"
+                        android:textStyle="bold"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
