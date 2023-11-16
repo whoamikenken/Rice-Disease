@@ -72,6 +72,14 @@ class Click_Main : AppCompatActivity() {
                  1)
                 for (output in outputs) {
                     Log.d("output", output.label)
+                    if(output.label == "Leaf_Blight"){
+                        startActivity(
+                            Intent(
+                                this@Click_Main,
+                                Leaf_blight::class.java
+                            )
+                        )
+                    }
                     labelDisease.text = output.label;
                 }
                 // Releases model resources if no longer used.
