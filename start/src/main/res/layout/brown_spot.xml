@@ -23,7 +23,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/leafblight" />
+            app:srcCompat="@drawable/brownspot" />
     </LinearLayout>
 
     <LinearLayout
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="Bacterial Leaf Blight"
+            android:text="Brown Spot"
             android:textColor="@color/green"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:text="Bacterial leaf blight (BLB) is a common and destructive disease affecting rice plants. One characteristic of bacterial leaf blight of rice is the presence of water-soaked lesions on the leaves. These lesions typically appear as narrow, V-shaped water-soaked streaks that run parallel to the leaf veins. As the disease progresses, the lesions may coalesce, leading to the wilting and necrosis of the affected leaves. The bacteria causing BLB often enter the plant through wounds or natural openings, such as stomata, and spread through water, rain, or irrigation."
+            android:text="Brown spot of rice, caused by Bipolaris oryzae, is characterized by small water-soaked lesions on leaves, evolving into brown elliptical spots with yellow halos. These lesions often merge, causing extensive leaf damage. The distinctive brown color results from the pathogen's melanin production. Infected plants exhibit stunted growth, reduced photosynthesis, and yield losses, affecting rice production. Control measures involve fungicides, resistant rice varieties, and cultural practices for sustainable management."
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="normal"

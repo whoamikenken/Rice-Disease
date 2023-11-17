@@ -79,8 +79,38 @@ class Click_Main : AppCompatActivity() {
                                 Leaf_blight::class.java
                             )
                         )
+                    }else if(output.label == "Tungro"){
+                        startActivity(
+                            Intent(
+                                this@Click_Main,
+                                Tungro::class.java
+                            )
+                        )
+                    }else if(output.label == "Leaf_Streak"){
+                        startActivity(
+                            Intent(
+                                this@Click_Main,
+                                Leaf_streak::class.java
+                            )
+                        )
+                    }else if(output.label == "Brown_Spot"){
+                        startActivity(
+                            Intent(
+                                this@Click_Main,
+                                Brown_spot::class.java
+                            )
+                        )
+                    }else if(output.label == "False_Smut"){
+                        startActivity(
+                            Intent(
+                                this@Click_Main,
+                                False_smut::class.java
+                            )
+                        )
+                    }else{
+                        labelDisease.text = output.label;
                     }
-                    labelDisease.text = output.label;
+
                 }
                 // Releases model resources if no longer used.
                 model.close()

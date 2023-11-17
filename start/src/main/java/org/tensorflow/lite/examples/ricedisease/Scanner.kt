@@ -324,8 +324,6 @@ class Scanner : AppCompatActivity() {
                             Log.d(TAG, output.label+" "+output.score)
                         }
                     }
-
-
                 }else{
                     items.add(Recognition("Cannot Classify", output.score))
                 }

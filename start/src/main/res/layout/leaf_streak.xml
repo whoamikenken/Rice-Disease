@@ -23,7 +23,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/leafblight" />
+            app:srcCompat="@drawable/leafstreak" />
     </LinearLayout>
 
     <LinearLayout
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="Bacterial Leaf Blight"
+            android:text="Leaf Streak"
             android:textColor="@color/green"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:text="Bacterial leaf blight (BLB) is a common and destructive disease affecting rice plants. One characteristic of bacterial leaf blight of rice is the presence of water-soaked lesions on the leaves. These lesions typically appear as narrow, V-shaped water-soaked streaks that run parallel to the leaf veins. As the disease progresses, the lesions may coalesce, leading to the wilting and necrosis of the affected leaves. The bacteria causing BLB often enter the plant through wounds or natural openings, such as stomata, and spread through water, rain, or irrigation."
+            android:text="Leaf streak of rice is characterized by narrow, dark green to brown lesions along leaf veins. These lesions evolve into long streaks, disrupting photosynthesis and causing a yellow halo to form around affected areas. This bacterial infection, caused by Xanthomonas oryzae pv. oryzae, significantly hampers the plant's health, leading to reduced chlorophyll production and ultimately affecting crop yield. Early detection and effective management strategies are crucial to mitigate the impact of leaf streak on rice cultivation."
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="normal"

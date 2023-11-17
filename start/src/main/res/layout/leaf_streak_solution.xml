@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="1. Early Identification"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="- Regularly inspect the crop for symptoms"
+        android:paddingLeft="16dp"
+        android:textColor="@android:color/darker_gray"/>
+
+    <!-- Add more specific cultural practices if needed -->
+
+    <!-- Step 2: Field Sanitation -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2. Cultural Practices"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="- Opt for resistant varieties and practice proper field hygiene."
+        android:paddingLeft="16dp"
+        android:textColor="@android:color/darker_gray"/>
+
+    <!-- Add more specific field sanitation measures if needed -->
+
+    <!-- Step 3: Chemical Control -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3. Fungicides"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="- Apply appropriate fungicides as recommended."
+        android:paddingLeft="16dp"
+        android:textColor="@android:color/darker_gray"/>
+
+    <!-- Add more specific chemical control measures if needed -->
+
+    <!-- Step 4: Biological Control -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4. Water Management"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="- Maintain proper water levels to reduce disease spread."
+        android:paddingLeft="16dp"
+        android:textColor="@android:color/darker_gray"/>
+
+    <!-- Add more specific biological control measures if needed -->
+
+    <!-- Step 5: Resistant Varieties -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5. Crop Rotation"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="- Rotate crops to disrupt disease cycles."
+        android:paddingLeft="16dp"
+        android:textColor="@android:color/darker_gray"/>
+
+    <!-- Add more specific information about resistant varieties if needed -->
+
+    <!-- Step 6: Monitoring and Early Detection -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="6. Timely Harvest"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="- Harvest at the right time to minimize disease transmission."
+        android:paddingLeft="16dp"
+        android:textColor="@android:color/darker_gray"/>
+
+    <!-- Add more specific information about monitoring if needed -->
+
+    <!-- Step 7: Water Management -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="7. Consult Experts"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="- Seek advice from agricultural extension services for tailored solutions."
+        android:paddingLeft="16dp"
+        android:textColor="@android:color/darker_gray"/>
+
+    </LinearLayout>>
+
+</LinearLayout>
