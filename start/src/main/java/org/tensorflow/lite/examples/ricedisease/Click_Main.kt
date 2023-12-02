@@ -138,7 +138,9 @@ class Click_Main : AppCompatActivity() {
                  1)
                 for (output in outputs) {
                     Log.d("output", output.score.toString());
-                    if(output.score < 0.7){
+                    if(output.score < 0.4){
+                        labelDisease.text = "Cannot Classify";
+                    } else if(output.score <= 0.5){
                         labelDisease.text = "Healty Rice";
                         startActivity(
                             Intent(

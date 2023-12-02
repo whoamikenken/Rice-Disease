@@ -318,10 +318,18 @@ class Scanner : AppCompatActivity() {
                         }
                     }
                 }else{
-                    items.add(Recognition("Healthy Rice", output.score))
-                    healthy_rice_plant++
-                    if(healthy_rice_plant > 10){
-                        Log.d(TAG, output.label+" "+output.score)
+                    if(output.score <= 0.4){
+                        items.add(Recognition("Cannot Classify", output.score))
+                        healthy_rice_plant++
+                        if(healthy_rice_plant > 10){
+                            Log.d(TAG, output.label+" "+output.score)
+                        }
+                    }else if(output.score <= 0.5){
+                        items.add(Recognition("Healthy Rice", output.score))
+                        healthy_rice_plant++
+                        if(healthy_rice_plant > 10){
+                            Log.d(TAG, output.label+" "+output.score)
+                        }
                     }
                 }
 
