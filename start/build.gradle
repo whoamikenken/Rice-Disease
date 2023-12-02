@@ -28,7 +28,7 @@ android {
 
     defaultConfig {
         applicationId "org.tensorflow.lite.examples.ricedisease"
-        minSdkVersion 31
+        minSdkVersion 30
         //noinspection OldTargetApi
         targetSdkVersion 34
         versionCode 1
@@ -82,6 +82,7 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor")
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.orhanobut:dialogplus:1.11@aar'
+    implementation 'junit:junit:4.12'
 
     // Import for CameraX
     def camerax_version = '1.4.0-alpha01'
@@ -96,7 +97,7 @@ dependencies {
     // TODO 5: Optional GPU Delegates
     implementation 'org.tensorflow:tensorflow-lite-gpu:2.3.0'
 
-    testImplementation 'junit:junit:4.13'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 

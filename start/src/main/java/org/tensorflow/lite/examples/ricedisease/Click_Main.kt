@@ -11,13 +11,12 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import org.tensorflow.lite.examples.ricedisease.ml.RiceACC
+import org.tensorflow.lite.examples.ricedisease.ml.ClassifyRice
 import org.tensorflow.lite.support.image.TensorImage
-import org.tensorflow.lite.support.label.Category
 import java.io.IOException
-import java.lang.Double.min
 import kotlin.math.min
 
 class Click_Main : AppCompatActivity() {
@@ -37,6 +36,73 @@ class Click_Main : AppCompatActivity() {
         labelDisease = findViewById(R.id.labelDisease)
 
         img_c = findViewById(R.id.img_c);
+
+
+        val tungro: LinearLayout = findViewById(R.id.Tungo)
+
+        tungro.setOnClickListener(View.OnClickListener {
+            startActivity(
+                Intent(
+                    this@Click_Main,
+                    Tungro::class.java
+                )
+            )
+        })
+
+        val brown_spot: LinearLayout = findViewById(R.id.BrownSpot)
+
+        brown_spot.setOnClickListener(View.OnClickListener {
+            startActivity(
+                Intent(
+                    this@Click_Main,
+                    Brown_spot::class.java
+                )
+            )
+        })
+
+        val grassy: LinearLayout = findViewById(R.id.Grassy)
+
+        grassy.setOnClickListener(View.OnClickListener {
+            startActivity(
+                Intent(
+                    this@Click_Main,
+                    Grassy::class.java
+                )
+            )
+        })
+
+        val leaf_blight: LinearLayout = findViewById(R.id.LeafBlight)
+
+        leaf_blight.setOnClickListener(View.OnClickListener {
+            startActivity(
+                Intent(
+                    this@Click_Main,
+                    Leaf_blight::class.java
+                )
+            )
+        })
+
+        val narrow: LinearLayout = findViewById(R.id.Narrow)
+
+        narrow.setOnClickListener(View.OnClickListener {
+            startActivity(
+                Intent(
+                    this@Click_Main,
+                    Narrow::class.java
+                )
+            )
+        })
+
+        val falsesmut: LinearLayout = findViewById(R.id.Falsesmut)
+
+        falsesmut.setOnClickListener(View.OnClickListener {
+            startActivity(
+                Intent(
+                    this@Click_Main,
+                    False_smut::class.java
+                )
+            )
+        })
 
         //Open Scanner Camera
         detect_c.setOnClickListener(View.OnClickListener {
@@ -62,7 +128,7 @@ class Click_Main : AppCompatActivity() {
 
     fun classify(photo_c: Bitmap?) {
         try {
-                val model = RiceACC.newInstance(this)
+                val model = ClassifyRice.newInstance(this)
 
                 // Creates inputs for reference.
                 val image = TensorImage.fromBitmap(photo_c)
@@ -71,36 +137,52 @@ class Click_Main : AppCompatActivity() {
                 val outputs = model.process(image).scoresAsCategoryList.apply { sortByDescending { it.score } }.take(
                  1)
                 for (output in outputs) {
-                    Log.d("output", output.label)
-                    if(output.label == "Leaf_Blight"){
+                    Log.d("output", output.score.toString());
+                    if(output.score < 0.7){
+                        labelDisease.text = "Healty Rice";
+                        startActivity(
+                            Intent(
+                                this@Click_Main,
+                                Healty::class.java
+                            )
+                        )
+
+                    } else if(output.label == "bacterial_leaf_blight"){
                         startActivity(
                             Intent(
                                 this@Click_Main,
                                 Leaf_blight::class.java
                             )
                         )
-                    }else if(output.label == "Tungro"){
+                    }else if(output.label == "tungro_virus"){
                         startActivity(
                             Intent(
                                 this@Click_Main,
                                 Tungro::class.java
                             )
                         )
-                    }else if(output.label == "Leaf_Streak"){
+                    }else if(output.label == "narrow_brown_spot"){
                         startActivity(
                             Intent(
                                 this@Click_Main,
-                                Leaf_streak::class.java
+                                Narrow::class.java
                             )
                         )
-                    }else if(output.label == "Brown_Spot"){
+                    }else if(output.label == "grassy_stunt_virus"){
+                        startActivity(
+                            Intent(
+                                this@Click_Main,
+                                Grassy::class.java
+                            )
+                        )
+                    }else if(output.label == "brown_spot"){
                         startActivity(
                             Intent(
                                 this@Click_Main,
                                 Brown_spot::class.java
                             )
                         )
-                    }else if(output.label == "False_Smut"){
+                    }else if(output.label == "false_smut"){
                         startActivity(
                             Intent(
                                 this@Click_Main,
@@ -108,7 +190,13 @@ class Click_Main : AppCompatActivity() {
                             )
                         )
                     }else{
-                        labelDisease.text = output.label;
+                        labelDisease.text = "Healty Rice";
+                        startActivity(
+                            Intent(
+                                this@Click_Main,
+                                Healty::class.java
+                            )
+                        )
                     }
 
                 }

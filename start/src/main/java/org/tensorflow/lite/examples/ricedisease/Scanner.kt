@@ -43,6 +43,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import org.tensorflow.lite.examples.ricedisease.ml.RiceACC
 import org.tensorflow.lite.examples.ricedisease.ml.AutoMLMid
+import org.tensorflow.lite.examples.ricedisease.ml.ClassifyRice
 import org.tensorflow.lite.examples.ricedisease.ui.RecognitionAdapter
 import org.tensorflow.lite.examples.ricedisease.util.YuvToRgbConverter
 import org.tensorflow.lite.examples.ricedisease.viewmodel.Recognition
@@ -233,7 +234,7 @@ class Scanner : AppCompatActivity() {
 //        private val riceModel = RiceMNE10.newInstance(ctx)
         // TODO 6. Optional GPU acceleration
 
-        private val riceModel: RiceACC by lazy{
+        private val riceModel: ClassifyRice by lazy{
             val compatList = CompatibilityList()
             val options = if(compatList.isDelegateSupportedOnThisDevice){
                 Log.d(TAG, "This device is GPU Compatible ")
@@ -243,7 +244,7 @@ class Scanner : AppCompatActivity() {
                 Model.Options.Builder().setNumThreads(4).build()
             }
             // Initialize the Flower Model
-            RiceACC.newInstance(ctx, options)
+            ClassifyRice.newInstance(ctx, options)
           }
 
 
@@ -269,7 +270,7 @@ class Scanner : AppCompatActivity() {
                 if(output.score >= 0.8){
 
                     // Return the result
-                    if(output.label == "Leaf_Blight"){
+                    if(output.label == "bacterial_leaf_blight"){
                         items.add(Recognition("Leaf Blight", output.score))
                         bacterial_leaf_blight++
                         if(bacterial_leaf_blight > 10){
@@ -277,15 +278,15 @@ class Scanner : AppCompatActivity() {
                         }
                     }
 
-                    if(output.label == "Leaf_Streak"){
-                        items.add(Recognition("Leaf Streak", output.score))
+                    if(output.label == "grassy_stunt_virus"){
+                        items.add(Recognition("Grassy Stunt", output.score))
                         bacterial_leaf_streak++
                         if(bacterial_leaf_streak > 10){
                             Log.d(TAG, output.label+" "+output.score)
                         }
                     }
 
-                    if(output.label == "Brown_Spot"){
+                    if(output.label == "brown_spot"){
                         items.add(Recognition("Brown Spot", output.score))
                         brown_spot++
                         if(brown_spot > 10){
@@ -293,16 +294,8 @@ class Scanner : AppCompatActivity() {
                         }
                     }
 
-                    if(output.label == "Heathy_Rice"){
-                        items.add(Recognition("Heathy Rice", output.score))
-                        healthy_rice_plant++
-                        if(healthy_rice_plant > 10){
-                            Log.d(TAG, output.label+" "+output.score)
-                        }
-                    }
-
-                    if(output.label == "Rice_Blast"){
-                        items.add(Recognition("Rice Blast", output.score))
+                    if(output.label == "narrow_brown_spot"){
+                        items.add(Recognition("Narrow Brown Spot", output.score))
                         rice_blast++
                         if(rice_blast > 10){
                             Log.d(TAG, output.label+" "+output.score)
@@ -317,7 +310,7 @@ class Scanner : AppCompatActivity() {
                         }
                     }
 
-                    if(output.label == "Tungro"){
+                    if(output.label == "tungro_virus"){
                         items.add(Recognition("Tungro Virus", output.score))
                         tungro_virus++
                         if(tungro_virus > 10){
@@ -325,7 +318,11 @@ class Scanner : AppCompatActivity() {
                         }
                     }
                 }else{
-                    items.add(Recognition("Cannot Classify", output.score))
+                    items.add(Recognition("Healthy Rice", output.score))
+                    healthy_rice_plant++
+                    if(healthy_rice_plant > 10){
+                        Log.d(TAG, output.label+" "+output.score)
+                    }
                 }
 
                 listener(items.toList())

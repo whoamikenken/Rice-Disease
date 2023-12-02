@@ -44,8 +44,10 @@
         <activity android:name=".Leaf_blight" />
         <activity android:name=".Brown_spot" />
         <activity android:name=".False_smut" />
-        <activity android:name=".Leaf_streak" />
+        <activity android:name=".Grassy" />
+        <activity android:name=".Narrow" />
         <activity android:name=".Tungro" />
+        <activity android:name=".Healty" />
         <activity android:name="org.tensorflow.lite.examples.ricedisease.MainActivity"
             android:exported="true">
             <intent-filter>
