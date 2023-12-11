@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="1. Fungicides"
+        android:text="1. Use Resistant Varieties"
         android:textStyle="bold"
         android:textSize="18sp"
         android:textColor="@android:color/black"/>
@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="- Apply appropriate fungicides as per recommended guidelines"
+        android:text="- Contact your local agriculture office for an up-to-date list of available varieties"
         android:paddingLeft="16dp"
         android:textColor="@android:color/darker_gray"/>
 
@@ -32,7 +32,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="2. Resistant Varieties"
+        android:text="2. Rogue Infected Plants"
         android:textStyle="bold"
         android:textSize="18sp"
         android:textColor="@android:color/black"/>
@@ -40,7 +40,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="- Consider planting rice varieties resistant to brown spot."
+        android:text="- Burn straw and stubble or any crop residue after harvest or let the straw decompose."
         android:paddingLeft="16dp"
         android:textColor="@android:color/darker_gray"/>
 
@@ -50,7 +50,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="3. Cultural Practices"
+        android:text="3. Vector Control"
         android:textStyle="bold"
         android:textSize="18sp"
         android:textColor="@android:color/black"/>
@@ -58,7 +58,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="- Ensure proper water management, spacing, and crop rotation to reduce disease pressure."
+        android:text="- Chemicals such as fentin hydroxide sprayed at the mid-tillering stage, thiophanate-methyl sprayed at the time of disease initiation can reduce stem rot incidence in the rice field."
         android:paddingLeft="16dp"
         android:textColor="@android:color/darker_gray"/>
 
@@ -68,7 +68,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="4. Early Detection"
+        android:text="4. Crop Rotation"
         android:textStyle="bold"
         android:textSize="18sp"
         android:textColor="@android:color/black"/>
@@ -76,7 +76,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="- Regularly monitor your crop for symptoms and take prompt action."
+        android:text="- Rotate rice crops with non-host crops to break the disease cycle."
         android:paddingLeft="16dp"
         android:textColor="@android:color/darker_gray"/>
 
@@ -86,7 +86,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="5. Crop Residue Management"
+        android:text="5. Field Hygiene"
         android:textStyle="bold"
         android:textSize="18sp"
         android:textColor="@android:color/black"/>
@@ -94,7 +94,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="- Remove and properly dispose of infected crop residues to minimize disease carryover."
+        android:text="- Balance the use of fertilizer or perform split application with high potash and lime to increase soil pH."
         android:paddingLeft="16dp"
         android:textColor="@android:color/darker_gray"/>
 
@@ -104,7 +104,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="6. Consult Experts"
+        android:text="6. Monitoring and Early Detection"
         android:textStyle="bold"
         android:textSize="18sp"
         android:textColor="@android:color/black"/>
@@ -112,11 +112,29 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="- Seek advice from agricultural extension services for tailored recommendations."
+        android:text="- Regularly monitor your crop for symptoms of tungro and take action at the first sign of infection."
         android:paddingLeft="16dp"
         android:textColor="@android:color/darker_gray"/>
 
-    </LinearLayout>>
+    <!-- Add more specific information about monitoring if needed -->
+
+    <!-- Step 7: Water Management -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="7. Consult Agricultural Experts"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="- Seek advice from local agricultural extension services or experts for specific recommendations based on your region and rice variety."
+        android:paddingLeft="16dp"
+        android:textColor="@android:color/darker_gray"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -143,7 +161,7 @@
         <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="http://www.knowledgebank.irri.org"
+        android:text="http://www.knowledgebank.irri.org/"
         android:textStyle="bold"
         android:textSize="12sp"
         android:gravity="center"
@@ -159,10 +177,12 @@
         <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="https://www.kaggle.com"
+        android:text="https://www.kaggle.com/"
         android:textStyle="bold"
         android:textSize="12sp"
         android:gravity="center"
         android:textColor="@android:color/holo_blue_light"/>
     </LinearLayout>
+
+
 </LinearLayout>

@@ -104,6 +104,17 @@ class Click_Main : AppCompatActivity() {
             )
         })
 
+        val stemro: LinearLayout = findViewById(R.id.StemRot)
+
+        stemro.setOnClickListener(View.OnClickListener {
+            startActivity(
+                Intent(
+                    this@Click_Main,
+                    Stem_rot::class.java
+                )
+            )
+        })
+
         //Open Scanner Camera
         detect_c.setOnClickListener(View.OnClickListener {
             startActivity(
@@ -137,68 +148,67 @@ class Click_Main : AppCompatActivity() {
                 val outputs = model.process(image).scoresAsCategoryList.apply { sortByDescending { it.score } }.take(
                  1)
                 for (output in outputs) {
-                    Log.d("output", output.score.toString());
-                    if(output.score < 0.4){
+                    if(output.score <= 0.6){
                         labelDisease.text = "Cannot Classify";
-                    } else if(output.score <= 0.5){
-                        labelDisease.text = "Healty Rice";
-                        startActivity(
-                            Intent(
-                                this@Click_Main,
-                                Healty::class.java
+                    } else if(output.score > 0.7){
+                        if(output.label == "bacterial_leaf_blight"){
+                            startActivity(
+                                Intent(
+                                    this@Click_Main,
+                                    Leaf_blight::class.java
+                                )
                             )
-                        )
+                        }else if(output.label == "tungro_virus"){
+                            startActivity(
+                                Intent(
+                                    this@Click_Main,
+                                    Tungro::class.java
+                                )
+                            )
+                        }else if(output.label == "narrow_brown_spot"){
+                            startActivity(
+                                Intent(
+                                    this@Click_Main,
+                                    Narrow::class.java
+                                )
+                            )
+                        }else if(output.label == "grassy_stunt_virus"){
+                            startActivity(
+                                Intent(
+                                    this@Click_Main,
+                                    Grassy::class.java
+                                )
+                            )
+                        }else if(output.label == "brown_spot"){
+                            startActivity(
+                                Intent(
+                                    this@Click_Main,
+                                    Brown_spot::class.java
+                                )
+                            )
+                        }else if(output.label == "rice_false_smut"){
+                            startActivity(
+                                Intent(
+                                    this@Click_Main,
+                                    False_smut::class.java
+                                )
+                            )
+                        }else if(output.label == "healthy_rice_plant"){
+                            startActivity(
+                                Intent(
+                                    this@Click_Main,
+                                    Healty::class.java
+                                )
+                            )
+                        }else if(output.label == "stem_rot"){
+                            startActivity(
+                                Intent(
+                                    this@Click_Main,
+                                    Stem_rot::class.java
+                                )
+                            )
+                        }
 
-                    } else if(output.label == "bacterial_leaf_blight"){
-                        startActivity(
-                            Intent(
-                                this@Click_Main,
-                                Leaf_blight::class.java
-                            )
-                        )
-                    }else if(output.label == "tungro_virus"){
-                        startActivity(
-                            Intent(
-                                this@Click_Main,
-                                Tungro::class.java
-                            )
-                        )
-                    }else if(output.label == "narrow_brown_spot"){
-                        startActivity(
-                            Intent(
-                                this@Click_Main,
-                                Narrow::class.java
-                            )
-                        )
-                    }else if(output.label == "grassy_stunt_virus"){
-                        startActivity(
-                            Intent(
-                                this@Click_Main,
-                                Grassy::class.java
-                            )
-                        )
-                    }else if(output.label == "brown_spot"){
-                        startActivity(
-                            Intent(
-                                this@Click_Main,
-                                Brown_spot::class.java
-                            )
-                        )
-                    }else if(output.label == "false_smut"){
-                        startActivity(
-                            Intent(
-                                this@Click_Main,
-                                False_smut::class.java
-                            )
-                        )
-                    }else{
-                        labelDisease.text = "Healty Rice";
-                        startActivity(
-                            Intent(
-                                this@Click_Main,
-                                Healty::class.java
-                            )
-                        )
                     }
 
                 }

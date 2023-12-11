@@ -20,10 +20,12 @@
 
     <!-- Make sure the device has a camera. If you use android.hardware.camera without .any,
     it will not work if you have a device without a back camera, such as most Chromebooks. -->
-    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-feature
+    android:name="android.hardware.camera.any"
+    android:required="true" />
 
     <!-- Specifying that the app will need camera permission -->
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -48,6 +50,7 @@
         <activity android:name=".Narrow" />
         <activity android:name=".Tungro" />
         <activity android:name=".Healty" />
+        <activity android:name=".Stem_rot" />
         <activity android:name="org.tensorflow.lite.examples.ricedisease.MainActivity"
             android:exported="true">
             <intent-filter>

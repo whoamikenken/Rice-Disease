@@ -115,4 +115,51 @@
 
     </LinearLayout>>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CREDITS"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rice Disease Solutions and Descriptions"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="@android:color/black"/>
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="http://www.knowledgebank.irri.org/"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="@android:color/holo_blue_light"/>
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rice Disease Datasets"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="@android:color/black"/>
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="https://www.kaggle.com/"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="@android:color/holo_blue_light"/>
+    </LinearLayout>
 </LinearLayout>

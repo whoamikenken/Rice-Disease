@@ -268,7 +268,6 @@ class Scanner : AppCompatActivity() {
             for (output in outputs) {
                 Log.d(TAG, output.label+" "+output.score)
                 if(output.score >= 0.8){
-
                     // Return the result
                     if(output.label == "bacterial_leaf_blight"){
                         items.add(Recognition("Leaf Blight", output.score))
@@ -302,7 +301,7 @@ class Scanner : AppCompatActivity() {
                         }
                     }
 
-                    if(output.label == "False_Smut"){
+                    if(output.label == "rice_false_smut"){
                         items.add(Recognition("False Smut", output.score))
                         rice_false_smut++
                         if(rice_false_smut > 10){
@@ -317,20 +316,24 @@ class Scanner : AppCompatActivity() {
                             Log.d(TAG, output.label+" "+output.score)
                         }
                     }
-                }else{
-                    if(output.score <= 0.4){
-                        items.add(Recognition("Cannot Classify", output.score))
-                        healthy_rice_plant++
-                        if(healthy_rice_plant > 10){
-                            Log.d(TAG, output.label+" "+output.score)
-                        }
-                    }else if(output.score <= 0.5){
+
+                    if(output.label == "healthy_rice_plant"){
                         items.add(Recognition("Healthy Rice", output.score))
                         healthy_rice_plant++
                         if(healthy_rice_plant > 10){
                             Log.d(TAG, output.label+" "+output.score)
                         }
                     }
+
+                    if(output.label == "stem_rot"){
+                        items.add(Recognition("Stem Rot", output.score))
+                        stem_rot++
+                        if(stem_rot > 10){
+                            Log.d(TAG, output.label+" "+output.score)
+                        }
+                    }
+                }else{
+                    items.add(Recognition("Cannot Classify", output.score))
                 }
 
                 listener(items.toList())
