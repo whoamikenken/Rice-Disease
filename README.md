@@ -1,8 +1,4 @@
-# Recogonize Flowers with TensorFLow Lite Model Maker and Android Studio ML Model Binding
-
-This folder contains the code for the TensorFlow Lite codelab:
-
-* [Recognize Flowers with TensorFlow on Android (Beta)](https://goo.gle/3dbCSbt)
+# Recogonize Rice Disease with TensorFLow Lite Model Maker and Android Studio ML Model Binding
 
 ## Introduction
 
@@ -13,7 +9,6 @@ In these codelabs, you will learn:
 *   How to train your own custom image classifier using [TensorFlow Lite Model Maker](https://www.tensorflow.org/lite/tutorials/model_maker_image_classification).
 *   How to use Android Studio to import the TensorFlow Lite model to integrate the custom model in an Android app using CameraX.
 *   How to use GPU on your phone to accelerate your model.
-
 
 ## Pre-requisites
 
